@@ -1,0 +1,24 @@
+namespace fantasybestarium_PanczelCsenge
+{
+	internal class Program
+	{
+		static void Main(string[] args)
+		{
+			const string connectionString =
+				"server=localhost;database=fantasybestariumdb;uid=root;password=;";
+
+			SzornyAdatbazis szornyAdatbazis = new SzornyAdatbazis();
+			var szornyek = szornyAdatbazis.Feltolt(connectionString);
+
+			Szornyelemzo szornyElemzo = new Szornyelemzo(szornyek);
+
+			Console.WriteLine($"Összes szörny: {szornyElemzo.OsszesSzornyszama()}");
+			Console.WriteLine($"Veszélyes szörnyek nevei: {szornyElemzo.Veszelyesszornyeknevei()}");
+			Console.WriteLine($"Egyedi élőhelyek: {szornyElemzo.EgyediElohelyek()}");
+			Console.WriteLine($"Átlagos veszélyesség: {szornyElemzo.AtlagosVeszelyesseg()}");
+			Console.WriteLine($"Legveszélyesebb szörny: {szornyElemzo.LegveszelyesebbSzorny()}");
+			Console.WriteLine($"Mocsári veszélyes szörnyek: {szornyElemzo.MocsariVeszelyesSzornyek()}");
+			Console.WriteLine($"Van extrém tűzgyengeségű szörny? {szornyElemzo.vanEextremtuzgyengeszorny()}");
+		}
+	}
+}
