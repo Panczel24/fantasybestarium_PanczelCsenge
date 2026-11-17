@@ -11,7 +11,7 @@ namespace fantasybestarium_PanczelCsenge
         //List<Szorny> Szornyek = new List<Szorny>();
 
 
-        public List<Szorny> Feltolt( string connectionString)
+        public  List<Szorny> Feltolt( string connectionString)
         {
             //connectionString = "server=localhost; " +
             //    "database=fantasybestariumdb; uid=root; password=";
